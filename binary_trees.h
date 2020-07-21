@@ -71,6 +71,8 @@ size_t binary_tree_nodes(const binary_tree_t *tree);
 int binary_tree_balance(const binary_tree_t *tree);
 /* function to determine if the binary tree is full (15) */
 int binary_tree_is_full(const binary_tree_t *tree);
+/* helper function for task 15, determines if node has two children */
+size_t two_children(const binary_tree_t *tree);
 /* function to determine if the binary tree is perfect (16) */
 int binary_tree_is_perfect(const binary_tree_t *tree);
 /* function to find the sibling of a given node (17)*/
