@@ -80,6 +80,10 @@ binary_tree_t *binary_tree_sibling(binary_tree_t *node);
 /* function to find the aunt/uncle of a given node (18)*/
 binary_tree_t *binary_tree_uncle(binary_tree_t *node);
 /* function to find the lowest common ancestor of two nodes (19)*/
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first, const binary_tree_t *second);
+binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
+				     const binary_tree_t *second);
+/* helper function for binary_trees_ancestor to find ancestor recursively */
+binary_tree_t *ancestor_finder(binary_tree_t *first_mover,
+			       binary_tree_t *second_mover);
 
 #endif
