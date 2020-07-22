@@ -85,5 +85,9 @@ binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
 /* helper function for binary_trees_ancestor to find ancestor recursively */
 binary_tree_t *ancestor_finder(binary_tree_t *first_mover,
 			       binary_tree_t *second_mover);
+/* function that goes through a binary tree using level-order traversal (20)*/
+void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
+/* helper function for level order traversal */
+void current_level(const binary_tree_t *tree, size_t level, void (*func)(int));
 
 #endif
