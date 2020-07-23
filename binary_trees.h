@@ -91,6 +91,11 @@ void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 void current_level(const binary_tree_t *tree, size_t level, void (*func)(int));
 /* function to determine if binary tree is complete (21)*/
 int binary_tree_is_complete(const binary_tree_t *tree);
+/* helper function for is_complete for NULL checks and queue initialization */
+binary_tree_t **initial_checks(binary_tree_t *tree, binary_tree_t **queue,
+			       int end, int *i);
+/* helper function for is_complete to check if realloc successful */
+int realloc_checks(binary_tree_t **queue_check, int end, int i);
 /* helper function for is_complete to free queue and return if failed */
 int free_queue_return_0(binary_tree_t **queue);
 

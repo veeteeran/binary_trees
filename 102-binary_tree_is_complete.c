@@ -13,13 +13,9 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 	binary_tree_t *temp = NULL;
 	int front = 0, rear = 0, i = 0, end = 500, flag = 0;
 
-	if (tree == NULL)
-		return (free_queue_return_0(queue));
-	queue = malloc(sizeof(binary_tree_t *) * end);
+	queue = initial_checks((binary_tree_t *)tree, queue, end, &i);
 	if (queue == NULL)
 		return (free_queue_return_0(queue));
-	for (i = 0; i < end; i++)
-		queue[i] = NULL;
 	queue[front] = (binary_tree_t *)tree;
 	temp = queue[front];
 	while (temp)
@@ -45,14 +41,52 @@ int binary_tree_is_complete(const binary_tree_t *tree)
 		{
 			end *= 2;
 			queue_check = realloc(queue, end);
-			if (queue_check == NULL)
+			if (realloc_checks(queue_check, end, i) == 0)
 				return (free_queue_return_0(queue));
 			queue = queue_check;
-			for (; i < end; i++)
-				queue[i] = NULL;
 		}
 	}
 	free(queue);
+	return (1);
+}
+
+/**
+ * initial_checks - checks if tree is NULL and mallocs queue
+ * @tree: pointer to binary tree root node
+ * @queue: queue to allocate memory for and initialize to NULL
+ * @end: size of queue
+ * @i: pointer to index for memory initialization
+ *
+ * Return: queue, or NULL if failed
+ */
+binary_tree_t **initial_checks(binary_tree_t *tree, binary_tree_t **queue,
+			       int end, int *i)
+{
+	if (tree == NULL)
+		return (NULL);
+	queue = malloc(sizeof(binary_tree_t *) * end);
+	if (queue == NULL)
+		return (NULL);
+	for ((*i) = 0; (*i) < end; (*i)++)
+		queue[(*i)] = NULL;
+	return (queue);
+}
+
+/**
+ * realloc_checks - checks that realloc was successful
+ * and initializes to NULL
+ * @queue_check: queue to check if realloc worked
+ * @end: new size of queue
+ * @i: old size of queue
+ *
+ * Return: 1 if successful, 0 if failed
+ */
+int realloc_checks(binary_tree_t **queue_check, int end, int i)
+{
+	if (queue_check == NULL)
+		return (0);
+	for (; i < end; i++)
+		queue_check[i] = NULL;
 	return (1);
 }
 
