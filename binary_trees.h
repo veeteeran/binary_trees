@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <limits.h>
 
 /* STRUCTS AND DEFINITIONS */
 /**
@@ -102,5 +103,9 @@ int free_queue_return_0(binary_tree_t **queue);
 binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 /* function that performs a right-rotation on a binary tree (23)*/
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
+/* function to determine if tree is valid binary search tree (24)*/
+int binary_tree_is_bst(const binary_tree_t *tree);
+/*helper function to recursively check if binary search tree */
+int is_bst_recursive(binary_tree_t *tree, int min, int max);
 
 #endif
