@@ -27,11 +27,13 @@ int is_bst_recursive(binary_tree_t *tree, int min, int max)
 
 	if (tree == NULL)
 		return (1);
+	if (tree->n == min || tree->n == max)
+		return (0);
 	if (tree->left)
 		local_min = tree->left->n;
 	if (tree->right)
 		local_max = tree->right->n;
-	if (tree->n < local_min || tree->n > local_max)
+	if (tree->n <= local_min || tree->n >= local_max)
 		return (0);
 	if (local_min == min && local_max == max)
 		return (1);
