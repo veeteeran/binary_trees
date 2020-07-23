@@ -98,5 +98,7 @@ binary_tree_t **initial_checks(binary_tree_t *tree, binary_tree_t **queue,
 int realloc_checks(binary_tree_t **queue_check, int end, int i);
 /* helper function for is_complete to free queue and return if failed */
 int free_queue_return_0(binary_tree_t **queue);
+/* function that performs a left-rotation on a binary tree (22)*/
+binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 
 #endif
