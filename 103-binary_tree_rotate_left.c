@@ -10,6 +10,8 @@ binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree)
 {
 	binary_tree_t *new_root;
 
+	if (tree == NULL || tree->right == NULL)
+		return (tree);
 	/* Variable to hold child , becomes the new root*/
 	new_root = tree->right;
 	/* Sets new_root parent to NULL*/
