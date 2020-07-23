@@ -89,5 +89,9 @@ binary_tree_t *ancestor_finder(binary_tree_t *first_mover,
 void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
 /* helper function for level order traversal */
 void current_level(const binary_tree_t *tree, size_t level, void (*func)(int));
+/* function to determine if binary tree is complete (21)*/
+int binary_tree_is_complete(const binary_tree_t *tree);
+/* helper function for is_complete to free queue and return if failed */
+int free_queue_return_0(binary_tree_t **queue);
 
 #endif
