@@ -141,7 +141,7 @@ Write a function that inserts a node as the left-child of another node
 * Write a function that finds the lowest common ancestor of two nodes
 
 
-### [20. Level-order traversal](./Write a function that goes through a binary tree using level-order traversal)
+### [20. Level-order traversal](./101-binary_tree_levelorder.c)
 * Write a function that goes through a binary tree using level-order traversal
 
 
@@ -153,8 +153,20 @@ Write a function that inserts a node as the left-child of another node
 * Write a function that performs a left-rotation on a binary tree
 
 
-### [23. Rotate right](104-binary_tree_rotate_right.c)
+### [23. Rotate right](./104-binary_tree_rotate_right.c)
 * Write a function that performs a right-rotation on a binary tree
+
+
+### [24. Is BST](./110-binary_tree_is_bst.c)
+* Write a function that checks if a binary tree is a valid Binary Search Tree
+
+
+### [25. BST - Insert](./111-bst_insert.c)
+* Write a function that inserts a value in a Binary Search Tree
+
+
+### [26. BST - Array to BST](./112-array_to_bst.c)
+* Write a function that builds a Binary Search Tree from an array
 
 ---
 
