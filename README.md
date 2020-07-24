@@ -168,6 +168,14 @@ Write a function that inserts a node as the left-child of another node
 ### [26. BST - Array to BST](./112-array_to_bst.c)
 * Write a function that builds a Binary Search Tree from an array
 
+
+### [27. BST - Search](./113-bst_search.c)
+* Write a function that searches for a value in a Binary Search Tree
+
+
+### [29. Big O #BST](./113-bst_search.c)
+* Average time complexities of insert, delete, search for BST
+
 ---
 
 ## Authors
