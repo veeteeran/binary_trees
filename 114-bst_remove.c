@@ -15,7 +15,7 @@ bst_t *bst_remove(bst_t *root, int value)
 
 	if (root == NULL)
 		return (NULL);
-	rm_node = bst_search(root, value);
+	rm_node = bst_search2(root, value);
 	if (rm_node == NULL)
 		return (NULL);
 	if (rm_node->right)
