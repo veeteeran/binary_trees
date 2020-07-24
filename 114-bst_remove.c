@@ -11,7 +11,6 @@
 bst_t *bst_remove(bst_t *root, int value)
 {
 	bst_t *rm_node = NULL, *temp = NULL;
-	/* *temp2 = NULL; */
 
 	if (root == NULL)
 		return (NULL);
@@ -19,30 +18,7 @@ bst_t *bst_remove(bst_t *root, int value)
 	if (rm_node == NULL)
 		return (NULL);
 	if (rm_node->right)
-	{
-		temp = rm_node->right;
-		while (temp->left)
-			temp = temp->left;
-		if (temp != rm_node->right)
-		{
-/*
- *			temp2 = temp->right;
- *			while (temp2->right)
- *				temp2 = temp->right;
- *			temp2->right = rm_node->right;
- */
-			temp->right = rm_node->right;
-			rm_node->right->parent = temp;
-			temp->parent->left = NULL;
-		}
-		temp->parent = rm_node->parent;
-		if (rm_node->parent && (temp->n < rm_node->parent->n))
-			rm_node->parent->left = temp;
-		else if (rm_node->parent)
-			rm_node->parent->right = temp;
-		else
-			root = temp;
-	}
+		temp = set_right(&root, rm_node);
 	if (rm_node->left && rm_node->right)
 	{
 		temp->left = rm_node->left;
@@ -88,4 +64,34 @@ bst_t *bst_search2(const bst_t *tree, int value)
 	if (value < tree->n)
 		return (bst_search2(tree->left, value));
 	return (bst_search2(tree->right, value));
+}
+
+/**
+ * set_right - sets right side if node removing has right child
+ * @root: double pointer to root node of the tree
+ * @rm_node: pointer to node to remove from tree
+ *
+ * Return: pointer to temp node reclacing removed node
+ */
+bst_t *set_right(bst_t **root, bst_t *rm_node)
+{
+	bst_t *temp = NULL;
+
+	temp = rm_node->right;
+	while (temp->left)
+		temp = temp->left;
+	if (temp != rm_node->right)
+	{
+		temp->right = rm_node->right;
+		rm_node->right->parent = temp;
+		temp->parent->left = NULL;
+	}
+	temp->parent = rm_node->parent;
+	if (rm_node->parent && (temp->n < rm_node->parent->n))
+		rm_node->parent->left = temp;
+	else if (rm_node->parent)
+		rm_node->parent->right = temp;
+	else
+		(*root) = temp;
+	return (temp);
 }
