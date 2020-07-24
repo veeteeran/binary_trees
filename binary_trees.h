@@ -107,5 +107,11 @@ binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 int binary_tree_is_bst(const binary_tree_t *tree);
 /*helper function to recursively check if binary search tree */
 int is_bst_recursive(binary_tree_t *tree, int min, int max);
+/* function to insert value into binary search tree (25)*/
+bst_t *bst_insert(bst_t **tree, int value);
+/* helper function to find location of insert for bst_insert */
+bst_t *location_finder(bst_t *tree, int value);
+/* function to create binary search tree from array of integers (26)*/
+bst_t *array_to_bst(int *array, size_t size);
 
 #endif
