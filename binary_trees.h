@@ -119,5 +119,7 @@ bst_t *bst_search(const bst_t *tree, int value);
 bst_t *bst_remove(bst_t *root, int value);
 /* helper function to find node to remove */
 bst_t *bst_search2(const bst_t *tree, int value);
+/* helper function to set right side if removed node had right child*/
+bst_t *set_right(bst_t **root, bst_t *rm_node);
 
 #endif
