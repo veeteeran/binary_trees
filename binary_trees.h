@@ -113,5 +113,7 @@ bst_t *bst_insert(bst_t **tree, int value);
 bst_t *location_finder(bst_t *tree, int value);
 /* function to create binary search tree from array of integers (26)*/
 bst_t *array_to_bst(int *array, size_t size);
+/* function that searches for a value in a Binary Search Tree (27)*/
+bst_t *bst_search(const bst_t *tree, int value);
 
 #endif
