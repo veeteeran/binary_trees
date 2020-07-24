@@ -14,12 +14,10 @@ bst_t *bst_insert(bst_t **tree, int value)
 	/* if tree reference doesn't exist, return NULL */
 	if (tree == NULL)
 		return (NULL);
-
 	/* create new_node, check if failed */
 	new_node = binary_tree_node((*tree), value);
 	if (new_node == NULL)
 		return (NULL);
-
 	/* if tree is empty, set new node as tree */
 	if ((*tree) == NULL)
 	{
@@ -41,7 +39,6 @@ bst_t *bst_insert(bst_t **tree, int value)
 		free(new_node);
 		return (NULL);
 	}
-
 	/* if value < location, need to add value as left child */
 	if (new_node->n < location->n)
 		location->left = new_node;
@@ -49,7 +46,6 @@ bst_t *bst_insert(bst_t **tree, int value)
 	/* if value > location, need to add value as right child */
 	if (location->n < new_node->n)
 		location->right = new_node;
-
 	/* new_node's parent is always location */
 	new_node->parent = location;
 	return (new_node);
